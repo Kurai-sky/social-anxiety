@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Fact Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-box {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fun Fact Generator</h1>
+        <div id="fact" class="fact-box">Click the button to see a fun fact!</div>
+        <button id="generateFact">Generate Fun Fact</button>
+    </div>
+    <script>
+        const facts = [
+            "Social anxiety disorder affects approximately 15 million adults in the United States.",
+            "It is the second most commonly diagnosed anxiety disorder following specific phobia.",
+            "Social anxiety often begins in the early to mid-teens, though it can sometimes start in childhood.",
+            "People with social anxiety disorder are often highly empathetic and sensitive to others' feelings.",
+            "Social anxiety can lead to avoidance of social situations, which can impact personal and professional relationships.",
+            "Cognitive-behavioral therapy (CBT) is one of the most effective treatments for social anxiety disorder.",
+            "Many famous people, including Adele and Barbra Streisand, have spoken about their experiences with social anxiety.",
+            "Social anxiety disorder is more common in women than in men.",
+            "Mindfulness and meditation practices can help reduce symptoms of social anxiety.",
+            "Social anxiety disorder can sometimes be mistaken for shyness, but it is a more intense and persistent condition."
+        ];
+
+        document.getElementById('generateFact').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            document.getElementById('fact').textContent = facts[randomIndex];
+        });
+    </script>
+</body>
+</html>
